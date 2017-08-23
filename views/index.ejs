@@ -1,0 +1,35 @@
+<% include header %>
+
+<h1>WHAT'S NEWS?</h1>
+
+<nav>
+  <ul>
+    <li><a href="/categorieen/<%- 0%>"><%- categorieen[0] %></a>
+    <li><a href="/categorieen/<%- 1%>"><%- categorieen[1] %></a>
+    <li><a href="/categorieen/<%- 2%>"><%- categorieen[2] %></a>
+    </ul>
+</nav>
+
+
+  <% var teller = 1; %>
+  <% nieuws.forEach(function(item){ %>
+    <section>
+        <h2>
+          <a href=/items/<%- item.id %>><%- item.titel %></a>
+
+        </h2>
+
+        <img src="/img/<%- item.afbeeldings %>" alt="<%- item.titel %>">
+        <p><%- item.datum %></p>
+
+        <p>
+          <%- item.samenvatting %>
+        </p>
+        <hr>
+
+
+    </section>
+
+    <% teller++;}); %>
+
+<% include footer %>

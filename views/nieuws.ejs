@@ -1,0 +1,27 @@
+<% include header %>
+
+<h1>WHAT'S NEWS?</h1>
+
+<a href="/">>>Homepage</a>
+<section>
+
+    <h2>
+      <%- item.titel %>
+    </h2>
+      <p id="datum"><%- item.datum %></p>
+    <img src="/img/<%- item.afbeeldingl %>" alt="<%- item.titel %>" class="imgGroot"/>
+
+
+    <p class="fullText">
+      <%- item.body %>
+    </p>
+
+    <p id="meerOver">Meer over:
+
+      <% for (var i = 0; i < item.categorieen.length; i++) { %>
+        <a href="/categorieen/<%- i %>"><%- item.categorieen[i] %></a><% if (i+1< item.categorieen.length){ %>, <% } %>
+      <% } %>
+    </p>
+</section>
+
+<% include footer %>
